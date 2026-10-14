@@ -1,19 +1,25 @@
-import { Button } from "@/components/ui/button"
+import { SiteHeader } from "@/components/site-header"
+import { SalonHero } from "@/components/salon-hero"
+import { SalonPhilosophy } from "@/components/salon-philosophy"
+import { SalonServices } from "@/components/salon-services"
+import { SmoothScroll } from "@/components/smooth-scroll"
 
 export default function Page() {
   return (
-    <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-        </div>
-        <div className="font-mono text-xs text-muted-foreground">
-          (Press <kbd>d</kbd> to toggle dark mode)
-        </div>
-      </div>
-    </div>
+    <>
+      <a
+        className="fixed top-2 left-4 z-[100] -translate-y-[150%] bg-brand-surface px-4 py-3 text-brand-ink focus:translate-y-0"
+        href="#main"
+      >
+        Skip to content
+      </a>
+      <SiteHeader />
+      <SmoothScroll />
+      <main id="main" tabIndex={-1}>
+        <SalonHero />
+        <SalonServices />
+        <SalonPhilosophy />
+      </main>
+    </>
   )
 }

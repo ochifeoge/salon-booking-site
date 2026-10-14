@@ -1,30 +1,25 @@
-import { Geist, Geist_Mono } from "next/font/google"
-
+import type { Metadata } from "next"
+import { Geist } from "next/font/google"
+import { salonConfig } from "@/lib/salon-config"
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'})
-
-const fontMono = Geist_Mono({
+const geist = Geist({
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-geist",
+  display: "swap",
 })
+
+export const metadata: Metadata = {
+  title: `${salonConfig.name} | Salon website demo`,
+  description: `${salonConfig.description} Explore this configurable salon website demonstration.`,
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", geist.variable)}
-    >
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
+    <html lang="en" className={geist.variable}>
+      <body>{children}</body>
     </html>
   )
 }
