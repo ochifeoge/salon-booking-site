@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 import { BookingAction } from "@/components/booking-action"
 import { MobileNavigation } from "@/components/mobile-navigation"
 import { salonConfig } from "@/lib/salon-config"
+import { FormeWordmark } from "@/components/forme-wordmark"
 
 export function SiteHeader({
   initialSolid = false,
@@ -37,6 +38,7 @@ export function SiteHeader({
         {salonConfig.navigation.map((link) => (
           <a
             key={link.href}
+            data-intro-nav
             href={link.href}
             aria-current={link.href === pathname ? "page" : undefined}
             className="inline-flex min-h-11 items-center text-sm font-medium underline-offset-8 transition-opacity duration-150 hover:opacity-65 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4"
@@ -45,7 +47,7 @@ export function SiteHeader({
           </a>
         ))}
       </nav>
-      <div className="md:hidden">
+      <div className="md:hidden" data-intro-nav>
         <MobileNavigation
           links={salonConfig.navigation}
           bookingUrl={salonConfig.bookingUrl}
@@ -54,25 +56,21 @@ export function SiteHeader({
 
       <Link
         href="/"
+        data-site-wordmark
         aria-label={`${salonConfig.name} home`}
         className="flex flex-col items-center leading-none focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-6"
       >
-        <span className="text-[1.35rem] font-black tracking-[-0.055em] md:text-[1.7rem]">
-          FORME
-        </span>
-        <span className="mt-0.5 text-[0.48rem] font-bold tracking-[0.42em] md:text-[0.55rem]">
-          STUDIO
-        </span>
+        <FormeWordmark />
       </Link>
 
       <div className="flex justify-end">
-        <div className="hidden md:block">
+        <div className="hidden md:block" data-intro-nav>
           <BookingAction
             href={salonConfig.bookingUrl}
             variant={scrolled ? "accent" : "light"}
           />
         </div>
-        <div className="md:hidden">
+        <div className="md:hidden" data-intro-nav>
           <BookingAction
             href={salonConfig.bookingUrl}
             compact

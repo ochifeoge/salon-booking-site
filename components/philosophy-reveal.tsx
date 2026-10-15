@@ -20,7 +20,7 @@ export function PhilosophyReveal({ children }: { children: ReactNode }) {
             scrollTrigger: {
               trigger: scope.current,
               start: "top 58%",
-              // once: true,
+              once: true,
             },
           })
           .from("[data-philosophy-line]", {
@@ -40,6 +40,16 @@ export function PhilosophyReveal({ children }: { children: ReactNode }) {
               ease: "power2.out",
             },
             0.12
+          )
+          .from(
+            "[data-philosophy-copy]",
+            {
+              autoAlpha: 0,
+              y: 16,
+              duration: 0.58,
+              ease: "power3.out",
+            },
+            0.2
           )
       })
 

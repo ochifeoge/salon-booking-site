@@ -3,6 +3,13 @@ import { SalonHero } from "@/components/salon-hero"
 import { SalonPhilosophy } from "@/components/salon-philosophy"
 import { SalonServices } from "@/components/salon-services"
 import { SmoothScroll } from "@/components/smooth-scroll"
+import { StyleInspiration } from "@/components/style-inspiration"
+import { HaircareProducts } from "@/components/haircare-products"
+import { AppointmentFaq } from "@/components/appointment-faq"
+import { VisitStudio } from "@/components/visit-studio"
+import { SiteFooter } from "@/components/site-footer"
+import { OpeningSequence } from "@/components/opening-sequence"
+import { SectionReveals } from "@/components/section-reveals"
 
 export default function Page() {
   return (
@@ -14,12 +21,19 @@ export default function Page() {
         Skip to content
       </a>
       <SiteHeader />
+      <OpeningSequence />
       <SmoothScroll />
+      <SectionReveals />
       <main id="main" tabIndex={-1}>
         <SalonHero />
         <SalonServices />
         <SalonPhilosophy />
+        <StyleInspiration />
+        <HaircareProducts />
+        <AppointmentFaq />
+        <VisitStudio />
       </main>
+      <SiteFooter />
     </>
   )
 }

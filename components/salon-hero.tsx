@@ -23,18 +23,31 @@ export function SalonHero() {
           id="hero-title"
           className="max-w-[15ch] text-[clamp(3.35rem,14vw,5rem)] leading-[0.96] font-bold tracking-[-0.045em] text-balance md:max-w-none md:text-[clamp(5rem,8.1vw,8rem)]"
         >
-          <span className="block">Good hair.</span>
-          <span className="block md:pl-[17vw]">Your way.</span>
+          <span className="block overflow-hidden">
+            <span className="block" data-intro-line>
+              Good hair.
+            </span>
+          </span>
+          <span className="block overflow-hidden md:pl-[17vw]">
+            <span className="block" data-intro-line>
+              Your way.
+            </span>
+          </span>
         </h1>
         <div className="mt-7 flex flex-col gap-7 md:mt-10 md:flex-row md:items-end md:justify-between">
-          <p className="max-w-[29ch] text-base leading-snug font-medium text-white md:max-w-[36ch] md:text-lg">
+          <p
+            data-intro-copy
+            className="max-w-[29ch] text-base leading-snug font-medium text-white md:max-w-[36ch] md:text-lg"
+          >
             Personalised styling and thoughtful care, shaped around you.
           </p>
-          <BookingAction
-            href={salonConfig.bookingUrl}
-            variant="light"
-            fullWidth
-          />
+          <div data-intro-book>
+            <BookingAction
+              href={salonConfig.bookingUrl}
+              variant="light"
+              fullWidth
+            />
+          </div>
         </div>
       </div>
     </section>

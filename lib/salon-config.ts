@@ -9,6 +9,8 @@ export const salonConfig = {
   navigation: [
     { label: "Home", href: "/" },
     { label: "Services", href: "/#services" },
+    { label: "Products", href: "/#products" },
+    { label: "FAQ", href: "/#faq" },
   ],
   bookingUrl: bookingConfig.path,
 } as const

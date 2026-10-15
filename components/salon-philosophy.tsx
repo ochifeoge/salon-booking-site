@@ -21,7 +21,10 @@ export function SalonPhilosophy() {
               </span>
             ))}
           </h2>
-          <p className="mt-10 max-w-[37ch] text-lg leading-[1.45] font-medium tracking-[-0.02em] sm:text-xl lg:mt-16 lg:max-w-[35ch] lg:text-[1.35rem]">
+          <p
+            data-philosophy-copy
+            className="mt-10 max-w-[37ch] text-lg leading-[1.45] font-medium tracking-[-0.02em] sm:text-xl lg:mt-16 lg:max-w-[35ch] lg:text-[1.35rem]"
+          >
             {philosophyConfig.description}
           </p>
         </div>

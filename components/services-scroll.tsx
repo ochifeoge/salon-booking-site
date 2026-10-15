@@ -35,7 +35,6 @@ export function ServicesScroll({ children }: { children: ReactNode }) {
               trigger: section,
               pin: true,
               start: "top -20%",
-              markers: true,
               end: () => `+=${travel()}`,
               scrub: 0.35,
               invalidateOnRefresh: true,

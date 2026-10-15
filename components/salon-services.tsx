@@ -9,12 +9,14 @@ export function SalonServices() {
     <ServicesScroll>
       <section
         id="services"
+        data-reveal-section
         aria-labelledby="services-title"
         className="bg-brand-ink pt-28 pb-20 text-white lg:flex lg:h-[100dvh] lg:min-h-[44rem] lg:flex-col lg:pt-27 lg:pb-0 motion-reduce:lg:h-auto motion-reduce:lg:pb-24"
       >
         <div className="flex items-end justify-between gap-8 px-5 sm:px-8 lg:px-[5vw]">
           <h2
             id="services-title"
+            data-reveal-heading
             className="text-[clamp(3.25rem,7vw,7.25rem)] leading-[0.94] font-bold tracking-[-0.065em]"
           >
             The services.
@@ -23,7 +25,10 @@ export function SalonServices() {
             Scroll to explore ↓
           </span>
         </div>
-        <p className="mt-5 px-5 text-sm leading-relaxed text-white/70 sm:px-8 lg:px-[5vw]">
+        <p
+          data-reveal-copy
+          className="mt-5 px-5 text-sm leading-relaxed text-white/70 sm:px-8 lg:px-[5vw]"
+        >
           Sample prices and timings. Your final service details are confirmed
           with the studio.
         </p>

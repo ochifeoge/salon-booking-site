@@ -89,6 +89,7 @@ export function HeroVideo({ src, poster, posterAlt }: Props) {
       />
       {!failed && (
         <button
+          data-intro-control
           className="absolute top-23 right-5 z-20 inline-flex min-h-11 items-center gap-2 rounded-sm border border-white/55 bg-black/45 px-3 text-xs font-semibold text-white transition-[background-color,transform] duration-150 hover:bg-black/70 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white active:scale-[.97] md:top-26 md:right-10 lg:right-14"
           onClick={togglePlayback}
           aria-controls={id}

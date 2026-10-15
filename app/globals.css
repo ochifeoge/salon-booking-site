@@ -6,6 +6,7 @@
 
 @theme inline {
   --font-sans: var(--font-geist);
+  --font-heading: var(--font-manrope);
   --color-brand-ink: var(--ink);
   --color-brand-surface: var(--surface);
   --color-brand-accent: var(--brand-accent);
@@ -207,13 +208,56 @@
     @apply bg-background text-foreground;
   }
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+a {
+  @apply font-heading;
+}
 @layer base {
-  html { scroll-behavior: smooth; }
-  body { font-family: var(--font-geist), sans-serif; }
-  button, a { -webkit-tap-highlight-color: transparent; }
-  :focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
-  ::selection { background: var(--brand-accent); color: white; }
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
+  html {
+    scroll-behavior: smooth;
   }
+  body {
+    font-family: var(--font-geist), sans-serif;
+  }
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+  ::selection {
+    background: var(--brand-accent);
+    color: white;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+/* The page stays readable without JavaScript; this class is set before paint. */
+[data-intro-curtain],
+[data-intro-floating-wordmark] {
+  display: none;
+}
+html.forme-intro-pending [data-intro-curtain] {
+  display: block;
+}
+html.forme-intro-pending [data-intro-floating-wordmark] {
+  display: grid;
+}
+html.forme-intro-pending [data-site-wordmark],
+html.forme-intro-pending [data-intro-nav],
+html.forme-intro-pending [data-intro-line],
+html.forme-intro-pending [data-intro-copy],
+html.forme-intro-pending [data-intro-book],
+html.forme-intro-pending [data-intro-control] {
+  opacity: 0;
 }
